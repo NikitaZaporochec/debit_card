@@ -1,0 +1,677 @@
+:root {
+    --primary-color: #ac9455;
+    --secondary-color: #d4b45e;
+    --accent-color: #e9d495;
+    --text-color: #0f172a;
+    --light-text: #f8fafc;
+    --background-color: #f1f5f9;
+    --card-color: #ffffff;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --gold-gradient: linear-gradient(135deg, #c5aa60, #e1ca7a);
+    --gold-text: #ab8f4a;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--background-color);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color);
+    overflow-x: hidden;
+}
+
+.intro-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    animation: fadeOut 1.5s ease-in-out 1.5s forwards;
+}
+
+.intro-content {
+    text-align: center;
+    color: var(--light-text);
+    transform: scale(0.8);
+    opacity: 0;
+    animation: popIn 1s ease-in-out 0.2s forwards;
+}
+
+.intro-logo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.intro-slogan {
+    font-size: 1.2rem;
+}
+
+@keyframes fadeOut {
+    0% { opacity: 1; visibility: visible; }
+    100% { opacity: 0; visibility: hidden; }
+}
+
+@keyframes popIn {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+    padding: 2rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    perspective: 1000px;
+}
+
+.language-toggle {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+
+.lang-btn {
+    background: none;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 0.5rem 0.75rem;
+    cursor: pointer;
+    font-size: 0.875rem;
+    transition: all 0.3s ease;
+    margin-left: 0.5rem;
+    position: relative;
+    width: 50px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border-radius: 4px;
+}
+
+.lang-btn.active {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.lang-btn::after {
+    display: none;
+}
+
+.lang-btn:not(.active):hover {
+    background-color: rgba(172, 148, 85, 0.1);
+}
+
+.github-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: auto;
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.github-btn svg {
+    width: 24px;
+    height: 24px;
+}
+
+.github-btn:hover {
+    transform: scale(1.1);
+}
+
+.card {
+    width: 100%;
+    height: 600px;
+    display: none;
+}
+
+.card.active {
+    display: block;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    transform-origin: center;
+    cursor: pointer;
+}
+
+.card-inner:hover {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px var(--shadow-color);
+}
+
+.card-front {
+    background-color: var(--card-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 2rem;
+}
+
+.card-back {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2rem;
+}
+
+.credit-card {
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 2rem;
+    position: relative;
+    color: white;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-chip {
+    width: 35px;
+    height: 25px;
+    background: linear-gradient(135deg, #efd677, #e1ca7a);
+    border-radius: 3px;
+    position: absolute;
+    top: 55px;
+    left: 20px;
+    border: 1px solid rgba(171, 143, 74, 0.5);
+}
+
+.card-chip::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 70%;
+    background: linear-gradient(to bottom, 
+        transparent 10%, #daba64 10%, #daba64 20%, 
+        transparent 20%, transparent 30%, #daba64 30%, #daba64 40%, 
+        transparent 40%, transparent 50%, #daba64 50%, #daba64 60%, 
+        transparent 60%, transparent 70%, #daba64 70%, #daba64 80%, 
+        transparent 80%);
+}
+
+.card-logo {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--gold-text);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.card-logo-name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.card-logo-type {
+    font-size: 1.5rem;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.card-number {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1.3rem;
+    letter-spacing: 2px;
+    text-align: left;
+    margin-top: 40px;
+    color: var(--gold-text);
+    position: absolute;
+    bottom: 60px;
+    left: 20px;
+}
+
+.card-number-prefix {
+    font-size: 0.7rem;
+    position: absolute;
+    top: -15px;
+    left: 0;
+    color: rgba(171, 143, 74, 0.7);
+}
+
+.card-holder {
+    font-size: 0.9rem;
+    text-align: left;
+    color: var(--gold-text);
+    position: absolute;
+    bottom: 30px;
+    left: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.card-valid {
+    font-size: 0.8rem;
+    text-align: left;
+    color: var(--gold-text);
+    position: absolute;
+    bottom: 15px;
+    left: 20px;
+}
+
+.info-container {
+    width: 100%;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+h2 {
+    font-size: 1.2rem;
+    font-weight: normal;
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+}
+
+.tagline {
+    font-size: 1.1rem;
+    font-style: italic;
+    margin-bottom: 1.5rem;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.contact-item svg {
+    width: 20px;
+    height: 20px;
+    color: var(--primary-color);
+}
+
+.company-logo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+.services {
+    text-align: left;
+}
+
+.services h3 {
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.services ul {
+    list-style-position: inside;
+    margin-bottom: 2rem;
+}
+
+.services li {
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+}
+
+.slogan {
+    font-size: 1.2rem;
+    font-style: italic;
+    text-align: center;
+}
+
+.portfolio-link {
+    margin-top: 2rem;
+    display: none;
+    opacity: 0;
+}
+
+.portfolio-link.active {
+    display: block;
+    animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+.portfolio-link.fade-out {
+    animation: fadeOut 0.3s ease-in-out forwards;
+}
+
+.portfolio-link a {
+    display: flex;
+    align-items: center;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: transform 0.3s ease;
+    gap: 0.5rem;
+}
+
+.portfolio-link a:hover {
+    transform: translateX(5px);
+}
+
+.portfolio-link svg {
+    width: 20px;
+    height: 20px;
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 1.5rem;
+    }
+    
+    .card {
+        height: 550px;
+    }
+    
+    h1 {
+        font-size: 1.5rem;
+    }
+    
+    h2 {
+        font-size: 1rem;
+    }
+    
+    .card-number {
+        font-size: 1.2rem;
+    }
+    
+    .credit-card {
+        height: 180px;
+    }
+}
+
+/* Стили для новой кредитной карты */
+.credit-card-container {
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    opacity: 0;
+}
+
+.credit-card-container.active {
+    display: flex;
+    animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+.credit-card-container.fade-out {
+    animation: fadeOut 0.3s ease-in-out forwards;
+}
+
+.credit-card-inner {
+    width: 100%;
+    max-width: 340px;
+    height: 210px;
+    position: relative;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    transform-origin: center center;
+    perspective: 1000px;
+}
+
+.credit-card-inner:hover {
+    transform: rotateY(180deg);
+}
+
+.credit-card-front, .credit-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    backface-visibility: hidden;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.credit-card-front {
+    background: var(--gold-gradient);
+    color: var(--gold-text);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    border-radius: 12px;
+    position: relative;
+}
+
+.credit-card-back {
+    background: var(--gold-gradient);
+    color: var(--gold-text);
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 20px;
+    padding: 20px;
+}
+
+.black-strip {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background-color: #111;
+}
+
+.cvv-container {
+    margin-top: 50px;
+    background-color: white;
+    color: #333;
+    padding: 10px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+}
+
+.cvv-label {
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.cvv-number {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.card-info {
+    margin-top: auto;
+    font-size: 12px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.card-details {
+    width: 100%;
+    text-align: center;
+}
+
+/* Добавляем элемент для бесконтактной оплаты */
+.contactless-icon {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 24px;
+    height: 24px;
+}
+
+.contactless-icon::before {
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 12px;
+    border-radius: 10px 10px 0 0;
+    border-top: 2px solid var(--gold-text);
+    border-left: 2px solid var(--gold-text);
+    border-right: 2px solid var(--gold-text);
+    transform: rotate(-45deg);
+    left: 6px;
+    top: 5px;
+}
+
+.contactless-icon::after {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 18px;
+    border-radius: 12px 12px 0 0;
+    border-top: 2px solid var(--gold-text);
+    border-left: 2px solid var(--gold-text);
+    border-right: 2px solid var(--gold-text);
+    transform: rotate(-45deg);
+    left: 3px;
+    top: 2px;
+}
+
+/* Обновленные стили для логотипа платежной системы */
+.payment-system-logo {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mastercard-logo {
+    display: flex;
+    align-items: center;
+}
+
+.mastercard-circle {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    position: relative;
+}
+
+.mastercard-circle-red {
+    background-color: #eb001b;
+    margin-right: -10px;
+    z-index: 1;
+}
+
+.mastercard-circle-yellow {
+    background-color: #f79e1b;
+    z-index: 2;
+}
+
+.mastercard-circle-overlap {
+    position: absolute;
+    width: 10px;
+    height: 25px;
+    background-color: #ff5f00;
+    left: 15px;
+    z-index: 3;
+}
+
+.mastercard-text {
+    font-size: 0.6rem;
+    margin-top: 3px;
+    color: var(--gold-text);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: lowercase;
+}
+
+/* Удаление ненужных стилей */
+.card,
+.card-inner,
+.card-front,
+.card-back,
+.credit-card {
+    display: none;
+}
+
+/* Обновление медиа-запросов */
+@media (max-width: 480px) {
+    .credit-card-inner {
+        max-width: 300px;
+        height: 190px;
+    }
+    
+    .card-number {
+        font-size: 1.1rem;
+    }
+    
+    .card-holder, .card-valid {
+        font-size: 0.8rem;
+    }
+}
+
+/* Add these animation styles for language switching */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; transform: translateY(0); }
+    to { opacity: 0; transform: translateY(-10px); }
+} 

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Премиальная кредитная карта</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="intro-overlay">
+        <div class="intro-content">
+            <div class="intro-logo">AlphaBank</div>
+            <div class="intro-slogan">Свобода. Надежность. Преимущества.</div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="language-toggle">
+            <a href="https://github.com/NikitaZaporochec" target="_blank" class="github-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                </svg>
+            </a>
+            <button class="lang-btn active" data-lang="ru">RU</button>
+            <button class="lang-btn" data-lang="en">EN</button>
+        </div>
+        
+        <!-- Русская версия -->
+        <div class="credit-card-container card-ru active">
+            <div class="credit-card-inner">
+                <div class="credit-card-front">
+                    <div class="contactless-icon"></div>
+                    <div class="card-chip"></div>
+                    <div class="card-logo">
+                        <span class="card-logo-name">ALPHA</span>
+                        <span class="card-logo-type">BANK</span>
+                    </div>
+                    <div class="card-number">
+                        <div class="card-number-prefix"></div>
+                        4653 6546 5435 4324
+                    </div>
+                    <div class="card-holder">НИКИТА ЗАПОРОЖЕЦ</div>
+                    <div class="card-valid">VALID THRU: 08/28</div>
+                    <div class="payment-system-logo">
+                        <div class="mastercard-logo">
+                            <div class="mastercard-circle mastercard-circle-red"></div>
+                            <div class="mastercard-circle mastercard-circle-yellow"></div>
+                            <div class="mastercard-circle-overlap"></div>
+                        </div>
+                        <div class="mastercard-text">mastercard</div>
+                    </div>
+                </div>
+                <div class="credit-card-back">
+                    <div class="black-strip"></div>
+                    <div class="cvv-container">
+                        <div class="cvv-label">CVV</div>
+                        <div class="cvv-number">633</div>
+                    </div>
+                    <div class="card-info">
+                        <div>Служба поддержки: 1337</div>
+                        <div>https://github.com/NikitaZaporochec</div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-details">
+                <h1>AlphaBank</h1>
+                <h2>Многофункциональная платежная карта</h2>
+                <div class="tagline">Кэшбэк на все услуги водителя фургона!</div>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M3 3h18v18H3V3z" fill="none"/><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-1 14H5c-.55 0-1-.45-1-1V8l6.94 4.34c.65.41 1.47.41 2.12 0L20 8v9c0 .55-.45 1-1 1zm-7-7L4 6h16l-8 5z"/></svg>
+                        <span>nikitalox228@gmail.com</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Английская версия -->
+        <div class="credit-card-container card-en">
+            <div class="credit-card-inner">
+                <div class="credit-card-front">
+                    <div class="contactless-icon"></div>
+                    <div class="card-chip"></div>
+                    <div class="card-logo">
+                        <span class="card-logo-name">ALPHA</span>
+                        <span class="card-logo-type">BANK</span>
+                    </div>
+                    <div class="card-number">
+                        <div class="card-number-prefix"></div>
+                        4653 6546 5435 4324
+                    </div>
+                    <div class="card-holder">NIKITA ZAPOROZHEC</div>
+                    <div class="card-valid">VALID THRU: 08/28</div>
+                    <div class="payment-system-logo">
+                        <div class="mastercard-logo">
+                            <div class="mastercard-circle mastercard-circle-red"></div>
+                            <div class="mastercard-circle mastercard-circle-yellow"></div>
+                            <div class="mastercard-circle-overlap"></div>
+                        </div>
+                        <div class="mastercard-text">mastercard</div>
+                    </div>
+                </div>
+                <div class="credit-card-back">
+                    <div class="black-strip"></div>
+                    <div class="cvv-container">
+                        <div class="cvv-label">CVV</div>
+                        <div class="cvv-number">633</div>
+                    </div>
+                    <div class="card-info">
+                        <div>Support: 1337</div>
+                        <div>https://github.com/NikitaZaporochec</div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-details">
+                <h1>AlphaBank</h1>
+                <h2>Multifunctional payment card</h2>
+                <div class="tagline">Cashback on all services for a van driver!</div>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M3 3h18v18H3V3z" fill="none"/><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-1 14H5c-.55 0-1-.45-1-1V8l6.94 4.34c.65.41 1.47.41 2.12 0L20 8v9c0 .55-.45 1-1 1zm-7-7L4 6h16l-8 5z"/></svg>
+                        <span>nikitalox228@gmail.com</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Секция "Мои работы" (Русская) -->
+        <div class="portfolio-link portfolio-ru active">
+            <a href="https://nikitazaporochec.github.io/memorial_nikita/" target="_blank">
+                <span>Посмотрите мои остальные работы!</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z"/>
+                </svg>
+            </a>
+        </div>
+        
+        <!-- Секция "Мои работы" (Английская) -->
+        <div class="portfolio-link portfolio-en">
+            <a href="https://nikitazaporochec.github.io/memorial_nikita/" target="_blank">
+                <span>Check out my other works!</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        // Предотвращаем зум при двойном касании на мобильных устройствах
+        document.addEventListener('touchmove', function(event) {
+            if (event.scale !== 1) {
+                event.preventDefault();
+            }
+        }, { passive: false });
+        
+        // Предотвращаем двойной тап для зума
+        let lastTouchEnd = 0;
+        document.addEventListener('touchend', function(event) {
+            const now = (new Date()).getTime();
+            if (now - lastTouchEnd <= 300) {
+                event.preventDefault();
+            }
+            lastTouchEnd = now;
+        }, false);
+    </script>
+</body>
+</html>
